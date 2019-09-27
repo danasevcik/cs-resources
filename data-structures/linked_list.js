@@ -7,15 +7,34 @@
   // next
 
 class LinkedList {
+
   constructor(head=null, tail=null) {
     this.head = head;
     this.tail = tail;
   }
+
+  findLast() {
+    return this.tail;
+  }
+
+  append(data) {
+    const node = new Node(data);
+    if (this.head === null) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      this.tail.next = node;
+      this.tail = node;
+    }
+  }
+
 }
 
 class Node {
+
   constructor(data, next=null) {
     this.data = data;
     this.next = next;
   }
+
 }
