@@ -4,3 +4,22 @@
   // pop
     // remove an element from the end of the stack
 // LIFO is the guiding principle of a stack - last in, first out
+
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  push(element) {
+    // add element to end of array
+    this.items.push(element);
+  }
+
+  pop(element) {
+    // remove last element in the array
+    if (this.items.length === 0) {
+      return 'not enough elements';
+    }
+    this.items.pop();
+  }
+}
