@@ -15,7 +15,7 @@ class Stack {
     this.items.push(element);
   }
 
-  pop(element) {
+  pop() {
     // remove last element in the array
     if (this.items.length === 0) {
       return 'not enough elements';
