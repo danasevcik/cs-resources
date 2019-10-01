@@ -9,6 +9,7 @@
 class LinkedList {
 
   constructor(head=null, tail=null) {
+    // create with head and tail
     this.head = head;
     this.tail = tail;
   }
@@ -18,6 +19,7 @@ class LinkedList {
   }
 
   append(data) {
+    // add node to end of list
     const node = new Node(data);
     if (this.head === null) {
       this.head = node;
@@ -33,6 +35,7 @@ class LinkedList {
 class Node {
 
   constructor(data, next=null) {
+    // create node with data and set default next attribute to null
     this.data = data;
     this.next = next;
   }
