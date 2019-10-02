@@ -11,11 +11,20 @@ class Graph {
   }
 
   addVertice(vertice) {
+    // add vertice to adjacent list as a key
+    // add empty array as the value for that key
     this.adjList.set(vertice, []);
   }
 
   addEdge(v1, v2) {
+    // this creates an edge without direction
     this.adjList.get(v1).push(v2);
     this.adjList.get(v2).push(v1);
+  }
+}
+
+class Vertice {
+  constructor(data) {
+    this.data = data;
   }
 }
