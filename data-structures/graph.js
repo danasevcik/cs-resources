@@ -26,6 +26,7 @@ class Graph {
   // DFS can be implemented using a stack structure
 
   dfs(vertice) {
+    // start at any vertice
     if (this.adjList.get(vertice)) {
       // create empty map object to keep track of visited vertices
       const visited = new Map();
@@ -51,6 +52,11 @@ class Graph {
       }
     })
   }
+
+  // Breadth first search is a traversal methodology - we search through the tree one level at a time. Traverse through one entire level of children nodes first, before moving on to traverse through the grandchildren nodes.
+  // BFS can be implemented using a queue structure
+
+
 }
 
 class Vertice {
