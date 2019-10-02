@@ -56,7 +56,38 @@ class Graph {
   // Breadth first search is a traversal methodology - we search through the tree one level at a time. Traverse through one entire level of children nodes first, before moving on to traverse through the grandchildren nodes.
   // BFS can be implemented using a queue structure
 
+  bfs(vertice) {
+    // start at any vertice
 
+    if (this.adjList.get(vertice)) {
+
+      // create empty map object to keep track of visited vertices
+      const visited = new Map();
+
+      // create new queue to keep track of vertices that we need to visit
+      let queue = [vertice];
+
+      // while there are still vertices in the queue
+      while(queue.length) {
+
+        // FIFO - remove first vertice in the queue and save as current vertice
+        const currVertice = queue.shift();
+
+        // only if current vertice hasn't been visited:
+        if (!visited.get(currVertice)) {
+
+          // get neighboring vertices from the adjacent list
+          const neighborVertices = this.adjList.get(currVertice);
+
+          // add thosee to the queue
+          queue = [...queue, ...neighborVertices];
+        }
+
+        // add current vertice to the map and set value to true
+        visited.get(currVertice) = true;
+      }
+    }
+  }
 }
 
 class Vertice {
