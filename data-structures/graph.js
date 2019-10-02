@@ -21,6 +21,36 @@ class Graph {
     this.adjList.get(v1).push(v2);
     this.adjList.get(v2).push(v1);
   }
+
+  // Depth first search is a traversal methodology - once we start down a path, we don't stop until we get to the end. Traverse through a branch the entire way through, and then work back up to the top.
+  // DFS can be implemented using a stack structure
+
+  dfs(vertice) {
+    if (this.adjList.get(vertice)) {
+      // create empty map object to keep track of visited vertices
+      const visited = new Map();
+
+      // call helper function to look for neighboring vertices
+      // pass in current vertice, visited obj, and null for previous vertice
+      this.dfsHelper(vertice, visited, null)
+    }
+  }
+
+  dfsHelper(vertice, visited, previous) {
+    // add key value to visited map
+    visited.set(vertice) = true;
+
+    // get array of other vertices
+    const neighbors = this.adjList.get(vertice);
+
+    // iterate through neighbors and check if that vertice has been visited
+    // if not, pass in that vertice, the visited map and previous vertice to helper fcn
+    neighbors.forEach(neighborVertice => {
+      if (!visited.get(neighborVertice) {
+        this.dfsHelper(neighborVertice, visited, vertice)
+      }
+    })
+  }
 }
 
 class Vertice {
