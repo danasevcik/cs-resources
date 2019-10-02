@@ -22,4 +22,9 @@ class Stack {
     }
     this.items.pop();
   }
+
+  size() {
+    // return stack length
+    return this.items.length;
+  }
 }

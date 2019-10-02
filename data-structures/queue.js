@@ -22,4 +22,9 @@ class Queue {
     }
     this.items.shift();
   }
+
+  size() {
+    // return queue length
+    return this.items.length;
+  }
 }
