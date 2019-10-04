@@ -58,7 +58,6 @@ class Graph {
 
   bfs(vertice) {
     // start at any vertice
-
     if (this.adjList.get(vertice)) {
 
       // create empty map object to keep track of visited vertices

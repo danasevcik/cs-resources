@@ -5,3 +5,16 @@
   // Node without children is called a leaf or terminal node
   // Height is the distance (edge count) between farthest leaf and node
   // Depth or level of node is the distance between the root and the node
+
+class Tree {
+  constructor(root=null) {
+    this.root = root;
+  }
+}
+
+class Node {
+  constructor(data, children=[]) {
+    this.data = data;
+    this.children = children;
+  }
+}
