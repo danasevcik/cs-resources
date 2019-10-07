@@ -5,6 +5,26 @@ class BinaryTree {
   constructor(root=null) {
     this.root = null;
   }
+
+  insert(data) {
+    let newNode = new Node(data);
+
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(node, newNode);
+    }
+  }
+
+  insertNode(node, newNode) {
+    if (node.left === null) {
+      node.left = newNode;
+    } else if (node.right === null) {
+      node.right = newNode;
+    } else {
+      return 'no space for the new node within the given node'
+    }
+  }
 }
 
 class Node {
