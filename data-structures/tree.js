@@ -8,12 +8,32 @@
 
 class Tree {
   constructor(root=null) {
+    // set the default value of root to be null
     this.root = root;
+  }
+
+  addNode(node) {
+    // first check if the root is null
+    // if it isn't, set the given node to be the root node
+    if (this.root ===  null) {
+      this.root = node;
+    } else {
+      // if there is, go through the nodes until there aren't any children
+      // when that node is found, set the given node to be the child of that node
+      let node = this.root;
+      while (node.children) {
+        node = node.children[0];
+      }
+      node.children.push(node);
+    }
   }
 }
 
 class Node {
   constructor(data, children=[]) {
+    // a node should have 2 properties - data and children
+    // data can be of any data type
+    // children is an array of node objects
     this.data = data;
     this.children = children;
   }
