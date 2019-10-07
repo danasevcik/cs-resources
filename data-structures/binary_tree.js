@@ -21,6 +21,11 @@ class BinaryTree {
   }
 
   insertNode(node, newNode) {
+    // given a node and a new node to append, check if left (arbitrarily first) is open
+    // if it is, make left property the new node
+    // if not, check if right is open
+    // if it is, make right property the new node
+    // if neither left or right are open, return error message
     if (node.left === null) {
       node.left = newNode;
     } else if (node.right === null) {
