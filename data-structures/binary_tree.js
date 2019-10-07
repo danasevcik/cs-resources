@@ -34,6 +34,10 @@ class BinaryTree {
       return 'no space for the new node within the given node'
     }
   }
+
+  removeRoot() {
+    this.root = null;
+  }
 }
 
 class Node {
