@@ -7,8 +7,12 @@ class BinaryTree {
   }
 
   insert(data) {
+    // create a new node with given data
     let newNode = new Node(data);
 
+    // check if the root of the tree is null
+    // if it is, make this new node the root
+    // otherwise, insert the node by calling the helper function
     if (this.root === null) {
       this.root = newNode;
     } else {
