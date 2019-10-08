@@ -23,13 +23,18 @@ class BinarySearchTree {
   }
 
   insertNode(node, newNode) {
+    // first check if the data for new node is less than data for given node
     if (newNode.data < node.data) {
+      // if the new data is less than given data, check if the left is empty
+      // otherwise, call this function until an empty left node is found
       if (node.left === null) {
         node.left = newNode;
       } else {
         insertNode(node.left, newNode);
       }
     } else {
+      // if new data is greater than given data, check if right is empty
+      // otherwise call this function until an empty right node is found
       if (node.right === null) {
         node.right = newNode;
       } else {
