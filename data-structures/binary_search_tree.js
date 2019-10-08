@@ -11,6 +11,10 @@ class BinarySearchTree {
   insert(data) {
     // create a node with the given data
     let newNode = new Node(data);
+
+    // first check if the root of this tree is null
+    // if it is, make the new node the root of the tree
+    // otherwise, call helper function and pass in the new node
     if (this.root === null) {
       this.root = newNode;
     } else {
