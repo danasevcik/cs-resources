@@ -7,6 +7,16 @@ class BinarySearchTree {
   constructor(root=null) {
     this.root = root;
   }
+
+  insert(data) {
+    // create a node with the given data
+    let newNode = new Node(data);
+    if (this.root === null) {
+      this.root = newNode;
+    } else {
+      this.insertNode(this.root, newNode);
+    }
+  }
 }
 
 class Node {
