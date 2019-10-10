@@ -59,10 +59,24 @@ class BinarySearchTree {
       node.left = this.removeNode(node.left, data);
       return node;
     } else if (data > node.data) {
+      // if data is greater, traverse right
       node.right = this.removeNode(node.right, data);
       return node;
     } else {
-      
+      // if data is the same, check if right and left are null
+      if (node.left === null && node.right === null) {
+        node = null;
+        return node;
+      }
+      if (node.left === null) {
+        // if there is only a node on the right, make that the new node
+        node = node.right;
+        return node;
+      } else if (node.right === null) {
+        // if there is only a node on the left, make that the new node
+        node = node.left;
+        return node;
+      }
     }
   }
 }
