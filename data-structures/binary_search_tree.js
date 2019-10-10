@@ -51,7 +51,19 @@ class BinarySearchTree {
   removeNode(node, data) {
     // removes the node with given data
     // is called recursively until it finds the node with the given data
-    
+    if (this.root === null) {
+      // if the root is null, tree is empty
+      return null;
+    } else if (data < node.data) {
+      // if data is less, traverse left
+      node.left = this.removeNode(node.left, data);
+      return node;
+    } else if (data > node.data) {
+      node.right = this.removeNode(node.right, data);
+      return node;
+    } else {
+      
+    }
   }
 }
 
