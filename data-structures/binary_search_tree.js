@@ -89,6 +89,16 @@ class BinarySearchTree {
       return this.findMinNode(node.left);
     }
   }
+
+  findMaxNode(node) {
+    // find max node by checking if the right attribute is null
+    // if it is, then it must be the greatest value
+    if (node.right === null) {
+      return node;
+    } else {
+      return this.findMaxNode(node.right);
+    }
+  }
 }
 
 class Node {
