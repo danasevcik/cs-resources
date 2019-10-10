@@ -99,6 +99,23 @@ class BinarySearchTree {
       return this.findMaxNode(node.right);
     }
   }
+
+  search(node, data) {
+    // find a node with given data by traversing starting at the given node
+    if (node === null) {
+      // if empty, return null
+      return null;
+    } else if (data < node.data) {
+      // if data is less than the given node's data, traverse left
+      return this.search(node.left, data);
+    } else if (data > node.data) {
+      // if data is greater than the given node's data, traverse right
+      return this.search(node.right, data);
+    } else {
+      // if the data equals the given node's data, return the found node
+      return node;
+    }
+  }
 }
 
 class Node {
