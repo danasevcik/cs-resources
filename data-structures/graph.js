@@ -64,13 +64,13 @@ class Graph {
       const visited = new Map();
 
       // create new queue to keep track of vertices that we need to visit
-      let queue = [vertice];
+      let notVisited = [vertice];
 
       // while there are still vertices in the queue
-      while(queue.length) {
+      while(notVisited.length) {
 
         // FIFO - remove first vertice in the queue and save as current vertice
-        const currVertice = queue.shift();
+        const currVertice = notVisited.shift();
 
         // only if current vertice hasn't been visited:
         if (!visited.get(currVertice)) {
@@ -79,7 +79,7 @@ class Graph {
           const neighborVertices = this.adjList.get(currVertice);
 
           // add thosee to the queue
-          queue = [...queue, ...neighborVertices];
+          notVisited = [...notVisited, ...neighborVertices];
         }
 
         // add current vertice to the map and set value to true
