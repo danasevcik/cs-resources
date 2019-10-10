@@ -79,6 +79,16 @@ class BinarySearchTree {
       }
     }
   }
+
+  findMinNode(node) {
+    // find min node by checking if the left attribute is null
+    // if it is, then it must be the lowest value
+    if (node.left === null) {
+      return node;
+    } else {
+      return this.findMinNode(node.left);
+    }
+  }
 }
 
 class Node {
