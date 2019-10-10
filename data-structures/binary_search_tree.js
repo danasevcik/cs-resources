@@ -42,6 +42,17 @@ class BinarySearchTree {
       }
     }
   }
+
+  removeData(data) {
+    // this is a helper method that calls removeNode with given data
+    this.root = this.removeNode(this.root, data);
+  }
+
+  removeNode(node, data) {
+    // removes the node with given data
+    // is called recursively until it finds the node with the given data
+    
+  }
 }
 
 class Node {
