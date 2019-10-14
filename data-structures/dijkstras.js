@@ -19,6 +19,8 @@ function djikstras(graph, origin) {
     // key value pairs for neighbors
     let neighbors = [...graph.adjList.get(target).entries()];
 
+    // set min to infinity
+    // all distances are infinity except for the starting node
     let minimum = Infinity;
 
     let tempTarget = null;
