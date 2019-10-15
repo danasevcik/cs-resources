@@ -23,20 +23,29 @@ function djikstras(graph, origin) {
     // all distances are infinity except for the starting node
     let minimum = Infinity;
 
+    // set temporary target node to null
     let tempTarget = null;
 
+    // iterate through the neighbors and grab nodes and weights
     neighbors.forEach(neighbor => {
       let node = neighbor[0];
       let weight = neighbor[1];
 
+      // set target node data and current node data
       let targetNodeData = data.get(target);
       let currentNodeData = data.get(node);
 
+      // if target weight plus weight of neighbor is less than current weight
+      // add neightbor weight to current weight
+      // and reset closest
       if (targetNodeData.weightSum + weight < currentNodeData.weightSum) {
         currentNodeData.weightSum = targetNodeData.weightSum + weight;
         currentNodeData.closest = target
       }
 
+      // if current weight is less than min and hasn't been visited yet
+      // change minimum to this weight sum
+      // change temp target to node
       if (currentNodeData.weightSum < minimum && !visited.get(node)) {
         minimum = currentNodeData.weightSum;
         tempTarget = node;
