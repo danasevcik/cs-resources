@@ -7,7 +7,16 @@ class WeightedGraph {
     this.undirected = undirected;
   }
 
-  
+  addVertex(vertice) {
+    if (vertice) {
+      if (vertice.constructor !== Node) {
+        vertice = new Node(vertice);
+      }
+    }
+    if (!this.adjList.get(vertice)) {
+      this.adjList.set(vertice, new Map());
+    }
+  }
 }
 
 class Node {
