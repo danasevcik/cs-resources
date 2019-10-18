@@ -8,12 +8,15 @@ class WeightedGraph {
   }
 
   addVertex(vertice) {
+    // check if the vertice is data or a node object
     if (vertice) {
       if (vertice.constructor !== Node) {
+        // create a node if only data is passed in
         vertice = new Node(vertice);
       }
     }
     if (!this.adjList.get(vertice)) {
+      // if the edge isnt found in the adj list, add it to the adj list
       this.adjList.set(vertice, new Map());
     }
   }
