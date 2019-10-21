@@ -25,7 +25,7 @@ class WeightedGraph {
     // check if origin and destination are present in adjlist
     if (this.adjList.get(origin) && this.adjList.get(destination)) {
       this.addEgdeHelper(origin, destination, weight)
-
+      // if graph is undirected, add edge both directions
       if (this.undirected) {
         this.addEgdeHelper(destination, origin, weight)
       }
