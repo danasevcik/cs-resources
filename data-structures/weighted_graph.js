@@ -20,6 +20,17 @@ class WeightedGraph {
       this.adjList.set(vertice, new Map());
     }
   }
+
+  addEdge(origin, destination, weight) {
+    // check if origin and destination are present in adjlist
+    if (this.adjList.get(origin) && this.adjList.get(destination)) {
+      this.addEgdeHelper(origin, destination, weight)
+
+      if (this.undirected) {
+        this.addEgdeHelper(destination, origin, weight)
+      }
+    }
+  }
 }
 
 class Node {
