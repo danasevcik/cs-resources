@@ -31,6 +31,10 @@ class WeightedGraph {
       }
     }
   }
+
+  addEgdeHelper(origin, destination, weight) {
+    // if there isn't alreeady an edge, add one with the given origin, destination and weight
+  }
 }
 
 class Node {
