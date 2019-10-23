@@ -38,6 +38,7 @@ class WeightedGraph {
 
     // only have to add edge once, since this helper fcn is called twice if the graph is undirected
     if (!edges.get(destination)) {
+      // set edge with destination and weight
       edges.set(destination, weight);
     }
   }
