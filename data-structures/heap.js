@@ -18,9 +18,12 @@ class Heap {
     let head = this.data[0];
     let tail = this.data.pop();
 
+    // if there is no data, there was only one ele in the array
     if (this.data[0]) {
+      // reassign first ele to tail
       this.data[0] = tail;
 
+      // starting from the top, bubble down
       this.bubbleDown(0, tail);
     }
     return head;
