@@ -18,6 +18,28 @@ class LinkedList {
     return this.tail;
   }
 
+  findMidpoint(list) {
+
+    // if the list is not empty, assign slow and fast variables
+    // increment the fast by 2, and slow by 1
+    if (this.head) {
+      let slow = this.head;
+      let fast = this.head;
+
+      // while there are 2 additional elements in the array, assign slow and fast
+      while (fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+      }
+
+      // return slow as the midpoint
+      return slow;
+    }
+
+    // if the list is empty, return null as the midpoint
+    return null;
+  }
+
   append(data) {
     // add node to end of list
     const node = new Node(data);
