@@ -19,7 +19,6 @@ class LinkedList {
   }
 
   findMidpoint(list) {
-
     // if the list is not empty, assign slow and fast variables
     // increment the fast by 2, and slow by 1
     if (this.head) {
@@ -41,18 +40,24 @@ class LinkedList {
   }
 
   circular(list) {
+    // if the list is not empty, assign slow and fast variables
+    // increment the fast by 2, and slow by 1
     if (this.head) {
       let slow = this.head;
       let fast = this.head;
 
+      // while there are 2 additional elements in the array, assign slow and fast
       while (fast.next.next) {
         slow = slow.next;
         fast = fast.next.next;
 
         if (slow === fast) {
+          // if the variables are pointing at the same node, the list is circular
+          // and return true
           return true;
         }
       }
+      // if the two values never are the same, the list is not circular
       return false;
     }
   }
