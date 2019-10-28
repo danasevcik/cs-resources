@@ -62,6 +62,24 @@ class LinkedList {
     }
   }
 
+  // given a linked list, find the element that is n nodes away from the last element
+  fromLast(list, n) {
+    let slow = this.head;
+    let fast = this.head;
+
+    while (n > 0) {
+      fast = fast.next;
+      n--;
+    }
+
+    while (fast.next) {
+      slow = slow.next;
+      fast = fast.next;
+    }
+
+    return slow;
+  }
+
   append(data) {
     // add node to end of list
     const node = new Node(data);
