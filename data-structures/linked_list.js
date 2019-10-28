@@ -40,6 +40,23 @@ class LinkedList {
     return null;
   }
 
+  circular(list) {
+    if (this.head) {
+      let slow = this.head;
+      let fast = this.head;
+
+      while (fast.next.next) {
+        slow = slow.next;
+        fast = fast.next.next;
+
+        if (slow === fast) {
+          return true;
+        }
+      }
+      return false;
+    }
+  }
+
   append(data) {
     // add node to end of list
     const node = new Node(data);
