@@ -64,19 +64,23 @@ class LinkedList {
 
   // given a linked list, find the element that is n nodes away from the last element
   fromLast(list, n) {
+    // initialize slow and fast fcn
     let slow = this.head;
     let fast = this.head;
 
+    // increment down from n and move fast n elements down the list
     while (n > 0) {
       fast = fast.next;
       n--;
     }
 
+    // while not at the end of the list, incrememnt slow and fast by one
     while (fast.next) {
       slow = slow.next;
       fast = fast.next;
     }
 
+    // return slow
     return slow;
   }
 
