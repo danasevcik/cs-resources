@@ -12,6 +12,17 @@ class Tree {
     this.root = root;
   }
 
+  bfs(fn) {
+    let arr = [this.root];
+
+    while (arr.length) {
+      let currentNode = arr.shift();
+      arr.push(...currentNode.children);
+
+      fn(node);
+    }
+  }
+
   addNode(node) {
     // first check if the root is null
     // if it isn't, set the given node to be the root node
