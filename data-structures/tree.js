@@ -23,6 +23,17 @@ class Tree {
     }
   }
 
+  dfs(fn) {
+    let arr = [this.root];
+
+    while (arr.length) {
+      let currentNode = arr.shift();
+      arr.unshift(...currentNode.children);
+
+      fn(node)
+    }
+  }
+
   addNode(node) {
     // first check if the root is null
     // if it isn't, set the given node to be the root node
