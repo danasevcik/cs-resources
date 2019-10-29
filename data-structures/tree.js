@@ -24,12 +24,17 @@ class Tree {
   }
 
   dfs(fn) {
+    // initialize an array to keep track of unvisited nodes
     let arr = [this.root];
 
+    // while there are still elements in the array
     while (arr.length) {
+      // remove first
       let currentNode = arr.shift();
+      // add its children to the FRONT of the array
       arr.unshift(...currentNode.children);
 
+      // invoke the callback with the given node
       fn(node)
     }
   }
