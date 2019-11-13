@@ -56,13 +56,15 @@ function selectionSort(arr) {
 function mergeSort(arr) {
   // check if array length is less than 2
   if (arr.length < 2) {
+    console.log('in merge sort if', arr)
     return arr;
   }
   // get mid point and call merge sort on each sub array
   let mid = Math.floor(arr.length/2);
   let left = arr.slice(0, mid);
   let right = arr.slice(mid);
-
+  console.log('left', left)
+  console.log('right', right)
   return merge(mergeSort(left), mergeSort(right));
 }
 
@@ -72,7 +74,7 @@ function merge(left, right) {
   let rightLength = right.length;
   let leftIndex = 0;
   let rightIndex = 0;
-
+  console.log('result', result)
   while(leftIndex < leftLength && rightIndex < rightLength) {
     if (left[leftIndex] < right[rightIndex]) {
       result.push(left[leftIndex]);
@@ -82,5 +84,8 @@ function merge(left, right) {
       rightIndex++;
     }
   }
+  console.log(result)
   return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
+
+console.log(mergeSort([6,5,3,1,8,7,2,4]))
