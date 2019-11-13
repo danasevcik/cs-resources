@@ -48,3 +48,4 @@ function selectionSort(arr) {
 
 // merge sort
 // runs O(n*log(n))
+// create 2 sorted arrays and then compare elements
