@@ -1,5 +1,5 @@
 // bubble sort
-// runs O(n)
+// runs O(n^2)
 
 function bubbleSort(arr) {
   // get the length of the arr and iterate twice through the arr
@@ -19,7 +19,7 @@ function bubbleSort(arr) {
 }
 
 // selection sort
-// runs O(n)
+// runs O(n^2)
 
 function selectionSort(arr) {
   // get the length of the arr and iterate twice through the arr
