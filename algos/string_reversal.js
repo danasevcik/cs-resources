@@ -17,3 +17,13 @@ function reverseStr(str) {
 }
 
 console.log(reverseStr('hello'));
+
+function reverseStr2(str) {
+  let resultStr = ''
+  for(let i = str.length - 1; i >= 0; i--) {
+    resultStr += str[i];
+  }
+  return resultStr;
+}
+
+console.log(reverseStr2('hello'));
