@@ -68,5 +68,19 @@ function mergeSort(arr) {
 
 function merge(left, right) {
   let result = [];
-  
+  let leftLength = left.length;
+  let rightLength = right.length;
+  let leftIndex = 0;
+  let rightIndex = 0;
+
+  while(leftIndex < leftLength && rightIndex < rightLength) {
+    if (left[leftIndex] < right[rightIndex]) {
+      result.push(left[leftIndex]);
+      leftIndex++;
+    } else {
+      result.push(right[rightIndex]);
+      rightIndex++;
+    }
+  }
+  return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 }
