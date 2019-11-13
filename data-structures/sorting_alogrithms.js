@@ -54,9 +54,11 @@ function selectionSort(arr) {
 // [6,5] [3,1] [8,7] [2,4] call helper with [6,5] and [3,1]
 
 function mergeSort(arr) {
+  // check if array length is less than 2
   if (arr.length < 2) {
     return arr;
   }
+  // get mid point and call merge sort on each sub array
   let mid = Math.floor(arr.length/2);
   let left = arr.slice(0, mid);
   let right = arr.slice(mid);
