@@ -49,9 +49,6 @@ function selectionSort(arr) {
 // merge sort
 // runs O(n*log(n))
 // create 2 sorted arrays and then compare elements
-// [6,5,3,1,8,7,2,4] mid is 4, create 2 new arrays
-// [6,5,3,1] [8,7,2,4] mid is 2, create 2 new arrays
-// [6,5] [3,1] [8,7] [2,4] call helper with [6,5] and [3,1]
 
 function mergeSort(arr) {
   // check if array length is less than 2
@@ -89,3 +86,8 @@ function merge(left, right) {
 }
 
 console.log(mergeSort([6,5,3,1,8,7,2,4]))
+// [6,5,3,1,8,7,2,4]
+// left [6,5,3,1]
+// right [8,7,2,4]
+// left [6,5]
+// right [3,1]
