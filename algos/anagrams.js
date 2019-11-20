@@ -15,5 +15,19 @@
 // otherwise return false
 
 function anagrams(str1, str2) {
-  
+  let obj1 = createCharMap(str1);
 }
+
+function createCharMap(string) {
+  let obj = {};
+  for (let i = 0; i < string.length; i++) {
+    if (obj[string[i]]) {
+      obj[string[i]]++;
+    } else {
+      obj[string[i]] = 1;
+    }
+  }
+  return obj;
+}
+
+console.log(createCharMap('hello'))
