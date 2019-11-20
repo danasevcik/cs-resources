@@ -13,3 +13,7 @@
 // iterate through other string and decrement value at given key
 // if all values are 0, return true
 // otherwise return false
+
+function anagrams(str1, str2) {
+  
+}
