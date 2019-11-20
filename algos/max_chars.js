@@ -33,5 +33,4 @@ function maxChars(str) {
   }
 
   return result;
-
 }
