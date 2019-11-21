@@ -15,7 +15,22 @@
 // otherwise return false
 
 function anagrams(str1, str2) {
-  let obj1 = createCharMap(str1);
+  if (str1.length !== str2.length) {
+    return false;
+  }
+
+  let obj1 = createCharMap(str1.toLowerCase());
+  let obj2 = createCharMap(str2.toLowerCase());
+  let obj1Keys = Object.keys(obj1);
+
+  for (let i = 0; i < obj1Keys.length; i++) {
+    let char = obj1Keys[i];
+    if (obj1[char] !== obj2[char]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 function createCharMap(string) {
@@ -31,3 +46,7 @@ function createCharMap(string) {
 }
 
 console.log(createCharMap('hello'))
+console.log(anagrams('hello', 'olleh')) // true
+console.log(anagrams('hey', 'yeh')) // true
+console.log(anagrams('heyyyyyyyyy', 'hey')) // false
+console.log(anagrams('tt', 'yy')) // false
