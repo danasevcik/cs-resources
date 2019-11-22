@@ -18,4 +18,26 @@
 //       '####'
 
 // loop twice - first for the row, and again for the characters in that row
-// on the second iteration, check if j is less than or equal to n
+// on the second iteration, check if j is less than or equal to i
+
+function printSteps(n) {
+  for (let i = 0; i < n; i++) {
+    let str = '';
+    for (let j = 0; j < n; j++) {
+      if (j <= i) {
+        str += '#';
+      } else {
+        str += ' ';
+      }
+    }
+    console.log(str);
+  }
+}
+
+
+console.log(printSteps(5))
+// '#    '
+// '##   '
+// '###  '
+// '#### '
+// '#####'
