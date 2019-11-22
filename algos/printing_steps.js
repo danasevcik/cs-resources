@@ -41,3 +41,8 @@ console.log(printSteps(5))
 // '###  '
 // '#### '
 // '#####'
+
+console.log(printSteps(3))
+// '#  '
+// '## '
+// '###'
