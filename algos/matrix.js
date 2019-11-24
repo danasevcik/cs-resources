@@ -27,10 +27,43 @@ function matrix(n) {
   let endRow = n - 1;
   let endColumn = n - 1;
 
+  for (let i = 0; i < n; i++) {
+    result.push([]);
+  }
 
+  while (startRow <= endRow && startColumn <= endColumn) {
+    // top row
+    for (let i = startColumn; i <= endColumn; i++) {
+      result[startRow][i] = counter;
+      counter++;
+    }
+    startRow++;
+
+    //right column
+    for (let i = startRow; i <= endRow; i++) {
+      result[i][endColumn] = counter;
+      counter++;
+    }
+    endColumn--;
+
+    // bottom row
+    for (let i = endColumn; i >= startRow; i--) {
+      result[endRow][i] = counter;
+      counter++;
+    }
+    endRow--;
+
+    // start column
+    for (let i = endRow; i >= startRow; i--) {
+      result[i][startColumn] = counter;
+      counter++;
+    }
+    startColumn++;
+  }
 
   return result;
 }
 
 
 console.log(matrix(2));
+console.log(matrix(3));
