@@ -10,7 +10,7 @@
 //   s.pop(); // returns 2
 //   s.pop(); // returns 1
 
-// create stack class
+// create stack class - LIFO - last in first out
 // create stack array
 // push - use .push
 // pop - use .pop
