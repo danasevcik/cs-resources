@@ -21,16 +21,41 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
-//
 
-const Queue = require('./queue');
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
 
-function weave(sourceOne, sourceTwo) {
+  add(data) {
+    return this.queue.push(data);
+  }
 
+  remove() {
+    return this.queue.shift()
+  }
+
+  weave(sourceOne, sourceTwo) {
+    let longerQueue = sourceOne.length > sourceTwo.length ? sourceOne.queue.length : sourceTwo.queue.length;
+    let sourceThree = new Queue;
+
+    for (let i = 0; i < longerQueue; i++) {
+      if (sourceOne.queue.length) {
+        sourceThree.add(sourceOne.remove());
+      }
+      if (sourceTwo.queue.length) {
+        sourceThree.add(sourceTwo.remove());
+      }
+    }
+
+    return sourceThree;
+  }
 }
+
 
 let queue1 = new Queue;
 let queue2 = new Queue;
+let queue3 = new Queue;
 queue1.add(1);
 queue1.add(2);
 queue1.add(3);
@@ -38,5 +63,6 @@ queue2.add(4);
 queue2.add(5);
 queue2.add(6);
 queue2.add(7);
+console.log(queue3.weave(queue1, queue2));
 
 // weave should give [1,4,2,5,3,6,7]
