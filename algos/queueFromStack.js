@@ -31,7 +31,7 @@ class Queue {
     return this.queue.shift()
   }
 
-  queueFromStack() {
+  queueFromStack(stackOne, stackTwo) {
 
   }
 }
@@ -55,3 +55,15 @@ class Stack {
     }
   }
 }
+
+let stack1 = new Stack;
+let stack2 = new Stack;
+stack1.push(1);
+stack1.push(2);
+stack1.push(3);
+stack1.push(4);
+stack2.push(5);
+stack2.push(6);
+stack2.push(7);
+stack2.push(8);
+let queue = new Queue;
