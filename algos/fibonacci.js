@@ -15,5 +15,21 @@
 // print out the n number of fib
 
 function fibonacci(n) {
-  
+  let fibArr = [];
+
+  for (let i = 0; i <= n; i++) {
+    if (i === 0  || i === 1) {
+      fibArr.push(i);
+    } else {
+      fibArr.push(fibArr[i - 2] + fibArr[i - 1]);
+    }
+  }
+
+  return fibArr[n];
 }
+
+console.log(fibonacci(4)) // 3
+console.log(fibonacci(5)) // 5
+console.log(fibonacci(6)) // 8
+console.log(fibonacci(7)) // 13
+console.log(fibonacci(8)) // 21
