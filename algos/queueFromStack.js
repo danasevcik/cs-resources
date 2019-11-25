@@ -17,3 +17,41 @@
 // q should be - [4,8,3,7,2,6,1,5]
 // get longer stack
 // as long as there are elements in stack, pop and add to queue
+
+class Queue {
+  constructor() {
+    this.queue = [];
+  }
+
+  add(data) {
+    return this.queue.push(data);
+  }
+
+  remove() {
+    return this.queue.shift()
+  }
+
+  queueFromStack() {
+
+  }
+}
+
+class Stack {
+  constructor() {
+    this.stack = [];
+  }
+
+  push(element) {
+    return this.stack.push(element);
+  }
+
+  pop() {
+    return this.stack.pop();
+  }
+
+  peek() {
+    if (this.stack.length) {
+      return this.stack[0]
+    }
+  }
+}
