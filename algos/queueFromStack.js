@@ -32,6 +32,19 @@ class Queue {
   }
 
   queueFromStack(stackOne, stackTwo) {
+    let longerStack = stackOne.stack.length > stackTwo.stack.length ? stackOne.stack.length : stackTwo.stack.length;
+    let newQueue = new Queue;
+
+    for (let i = 0; i < longerStack; i++) {
+      if (stackOne.stack.length) {
+        newQueue.add(stackOne.pop());
+      }
+      if (stackTwo.stack.length) {
+        newQueue.add(stackTwo.pop());
+      }
+    }
+
+    return newQueue;
 
   }
 }
@@ -67,3 +80,7 @@ stack2.push(6);
 stack2.push(7);
 stack2.push(8);
 let queue = new Queue;
+console.log(queue.queueFromStack(stack1, stack2)); // this should give
+// stack 1 - [1,2,3,4]
+// stack 2 - [5,6,7,8]
+// [4,8,3,7,2,6,1,5]
