@@ -52,6 +52,11 @@
 // console.log(fibRecursive(7)) // 13
 // console.log(fibRecursive(8)) // 21
 
+// if there is not a cache object, create an empty obj
+// if there is a value in the obj at key n, return that value
+// base case if n is 0 or 1
+// return the value of the cache obj at key n of n - 1 + n - 2
+
 function fibMemoize(n, cache) {
 
   cache = cache || {}
