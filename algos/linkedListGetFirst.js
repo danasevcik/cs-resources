@@ -22,4 +22,8 @@ class LinkedList {
   constructor(head) {
     this.head = head;
   }
+
+  getFirst() {
+    return this.head;
+  }
 }
