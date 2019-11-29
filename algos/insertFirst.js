@@ -34,6 +34,7 @@ class LinkedList {
       this.head = node;
       this.head.next = curr;
     }
+    return this
   }
 
 }
@@ -41,3 +42,4 @@ let nodeTwo = new Node(2);
 let nodeOne = new Node(1, nodeTwo);
 let list = new LinkedList(nodeOne);
 console.log(list);
+console.log(list.insertFirst(3))
