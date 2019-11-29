@@ -38,16 +38,36 @@
 // start with array and have base case be 0 or 1
 // otherwise, call fib with n-1 and n-2
 
-function fibRecursive(n) {
-  if (n === 0 || n === 1) {
-    return n;
-  } else {
-    return fibRecursive(n - 1) + fibRecursive(n - 2);
-  }
-}
+// function fibRecursive(n) {
+//   if (n === 0 || n === 1) {
+//     return n;
+//   } else {
+//     return fibRecursive(n - 1) + fibRecursive(n - 2);
+//   }
+// }
 
-console.log(fibRecursive(4)) // 3
-console.log(fibRecursive(5)) // 5
-console.log(fibRecursive(6)) // 8
-console.log(fibRecursive(7)) // 13
-console.log(fibRecursive(8)) // 21
+// console.log(fibRecursive(4)) // 3
+// console.log(fibRecursive(5)) // 5
+// console.log(fibRecursive(6)) // 8
+// console.log(fibRecursive(7)) // 13
+// console.log(fibRecursive(8)) // 21
+
+function fibMemoize(n, cache) {
+
+  cache = cache || {}
+
+  if (cache[n]) {
+    return cache[n]
+  }
+
+  if (n <= 1) {
+    return n
+  }
+
+  return cache[n] = fibMemoize(n - 1, cache) + fibMemoize(n - 2, cache)
+}
+console.log(fibMemoize(4)) // 3
+console.log(fibMemoize(5)) // 5
+console.log(fibMemoize(6)) // 8
+console.log(fibMemoize(7)) // 13
+console.log(fibMemoize(8)) // 21
