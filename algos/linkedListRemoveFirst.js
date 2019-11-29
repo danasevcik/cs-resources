@@ -35,4 +35,23 @@ class LinkedList {
   constructor(head) {
     this.head = head;
   }
+
+  removeFirst() {
+    if (this.head === null) {
+      return this;
+    } else {
+      let next = this.head.next;
+      this.head = next;
+      return this;
+    }
+  }
 }
+
+let nodeOne = new Node(1);
+let nodeTwo = new Node(2, nodeOne);
+let nodeThree = new Node(3, nodeTwo);
+let nodeFour = new Node(4, nodeThree);
+let list = new LinkedList(nodeFour);
+console.log(list);
+console.log(list.removeFirst());
+console.log(list);
