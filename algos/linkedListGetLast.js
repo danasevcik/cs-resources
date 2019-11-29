@@ -22,4 +22,24 @@ class LinkedList {
   constructor(head) {
     this.head = head;
   }
+
+  getLast() {
+    if (this.head === null) {
+      return null;
+    } else {
+      let node = this.head;
+      while (node.next) {
+        node = node.next;
+      }
+      return node;
+    }
+  }
 }
+
+let nodeOne = new Node(1);
+let nodeTwo = new Node(2, nodeOne);
+let nodeThree = new Node(3, nodeTwo);
+let nodeFour = new Node(4, nodeThree);
+let list = new LinkedList(nodeFour);
+console.log(list);
+console.log(list.getLast()); // should be nodeOne
