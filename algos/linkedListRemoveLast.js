@@ -54,6 +54,39 @@ class LinkedList {
   }
 
   removeLast()  {
-    
+    if (this.head) {
+      if (this.head.next) {
+        let previous = this.head;
+        let current = this.head.next;
+        while (current.next) {
+          previous = current;
+          current = current.next;
+        }
+        previous.next = null;
+        return previous;
+      } else {
+        this.head = null;
+        return 'you removed the last node!'
+      }
+    } else {
+      return 'the list is empty!'
+    }
   }
 }
+
+let nodeOne = new Node(1);
+let nodeTwo = new Node(2, nodeOne);
+let nodeThree = new Node(3, nodeTwo);
+let nodeFour = new Node(4, nodeThree);
+let list = new LinkedList(nodeFour);
+console.log(list);
+console.log(list.removeLast());
+console.log(list.removeLast());
+console.log(list);
+
+// let nodeOne = new Node(1);
+// let nodeFour = new Node(4);
+// let list = new LinkedList(nodeFour);
+// console.log(list);
+// console.log(list.removeLast());
+// console.log(list);
