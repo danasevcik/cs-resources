@@ -18,3 +18,43 @@
 // iterate through the list and add to index counter
 // when arrived at num, return node's data
 // if nothing, return null
+
+class Node {
+  constructor(data, next=null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+
+  getAt(index){
+    if (this.head) {
+      let indexCounter = 0;
+      if (index === indexCounter) {
+        return this.head.data;
+      }
+      let next = this.head.next;
+      while (next) {
+        indexCounter ++;
+        if (indexCounter === index) {
+          return next.data;
+        }
+        next = next.next;
+      }
+    } else {
+      return null;
+    }
+  }
+}
+
+let nodeOne = new Node(1);
+let nodeTwo = new Node(2, nodeOne);
+let nodeThree = new Node(3, nodeTwo);
+let nodeFour = new Node(4, nodeThree);
+let list = new LinkedList(nodeFour);
+console.log(list);
+console.log(list.getAt(1));
