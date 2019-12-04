@@ -55,3 +55,53 @@
 // iterate through list with 2 pointers
 // one pointing to last and one to current
 // once arrived at the wanted index, change next proprty of previous
+
+
+class Node {
+  constructor(data, next=null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+
+  removeAt(index){
+    let indexCounter = 0;
+    // check if there is a head
+    if (this.head) {
+      // if they want to remove head
+      if (index === 0) {
+        if (this.head.next) {
+          this.head = this.head.next;
+        }
+      } else {
+        // if they dont want to remove first element
+        let previous = this.head;
+        let current = previous.next;
+        while(current.next) {
+          indexCounter++;
+          if (indexCounter === index) {
+            previous.next = current.next;
+          }
+          previous = current;
+          current = current.next;
+        }
+      }
+    } else {
+      return null;
+    }
+  }
+}
+
+let nodeOne = new Node(1);
+let nodeTwo = new Node(2, nodeOne);
+let nodeThree = new Node(3, nodeTwo);
+let nodeFour = new Node(4, nodeThree);
+let list = new LinkedList(nodeFour);
+console.log(list);
+console.log(list.removeAt(1));
+console.log(list);
