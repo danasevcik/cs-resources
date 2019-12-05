@@ -10,7 +10,10 @@ function hourglass(arr) {
   for (let row = 0; row <= 3; row++) {
     for (let column = 0; column <= 3; column++) {
       let sum = 0;
-
+      console.log(sum)
+      console.log(sums)
+      console.log(row)
+      console.log(column)
       sum += arr[row][column]; // top left
       sum += arr[row][column + 1]; // top mid
       sum += arr[row][column + 2]; // top right
@@ -19,9 +22,17 @@ function hourglass(arr) {
       sum += arr[row + 2][column + 1]; // bottom mid
       sum += arr[row + 2][column + 2]; // bottom right
 
-      sums << sum
+      sums.push(sum)
     }
   }
-
-  return Math.max(sums);
+  console.log(...sums);
+  return Math.max(...sums);
 }
+
+console.log(hourglass(
+[[1, 1, 1, 0, 0, 0],
+[0, 1, 0, 0, 0, 0],
+[1, 1, 1, 0, 0, 0],
+[0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0],
+[0, 0, 0, 0, 0, 0]]));
