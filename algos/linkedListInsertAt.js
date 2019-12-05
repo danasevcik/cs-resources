@@ -58,3 +58,45 @@
 // if yes and there are more elements
 // iterate until found the index
 // change the next property of previous and change next of inserted node to current
+
+class Node {
+  constructor(data, next=null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+
+  insertAt(data, index) {
+    let indexCounter = 0;
+    let newNode = new Node(data);
+    if (this.head) {
+      let previous = this.head;
+      let current = this.head.next;
+      while (current && current.next) {
+        if (indexCounter === index) {
+          previous.next = newNode;
+          newNode.next = current;
+          return this;
+        }
+        previous = newNode;
+        indexCounter++;
+      }
+    } else {
+      this.head = newNode;
+    }
+  }
+}
+
+let nodeOne = new Node(1);
+let nodeTwo = new Node(2, nodeOne);
+let nodeThree = new Node(3, nodeTwo);
+let nodeFour = new Node(4, nodeThree);
+let list = new LinkedList(nodeFour);
+console.log(list);
+console.log(list.insertAt('hello', 0));
+console.log(list);
