@@ -6,3 +6,28 @@
 // if first char is '-', return false
 // if the num does not match the num at other end, return false
 // otherwise return true
+
+function numPalindrome(num) {
+  let numStr = num.toString();
+  if (numStr[0] === '-') {
+    return false;
+  }
+
+  let mid = Math.floor(numStr.length / 2)
+
+  for (let i = 0; i < mid; i++) {
+    console.log(numStr[i]);
+    console.log(numStr[numStr.length - 1 - i]);
+    if (numStr[i] !== numStr[numStr.length - 1 - i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+
+console.log(numPalindrome(121)); // true
+console.log(numPalindrome(-121)); // false
+console.log(numPalindrome(1221)); // true
+console.log(numPalindrome(500)); // false 
