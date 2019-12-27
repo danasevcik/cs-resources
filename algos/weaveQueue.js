@@ -36,7 +36,7 @@ class Queue {
   }
 
   weave(sourceOne, sourceTwo) {
-    let longerQueue = sourceOne.length > sourceTwo.length ? sourceOne.queue.length : sourceTwo.queue.length;
+    let longerQueue = sourceOne.length >= sourceTwo.length ? sourceOne.queue.length : sourceTwo.queue.length;
     let sourceThree = new Queue;
 
     for (let i = 0; i < longerQueue; i++) {
