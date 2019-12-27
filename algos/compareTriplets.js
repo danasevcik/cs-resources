@@ -22,7 +22,9 @@ function compareTriplets(arrA, arrB) {
   return result;
 }
 
-// 
+// since there will always be three elements in both arrays
+// check each index in both arrays and compare values
+// update result array accordingly
 
 function compareTripletsFaster(arrA, arrB) {
   let result = [0,0];
