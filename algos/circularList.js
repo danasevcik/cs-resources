@@ -5,17 +5,29 @@
 // if the next property is null, return false
 // otherwise check if the node has already been visited
 
+class Node {
+  constructor(data, next=null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+class LinkedList {
+  constructor(head) {
+    this.head = head;
+  }
+}
 
 function circularList(head) {
-  let seen = new Map();
-  console.log(seen);
+  let seen = {head:true};
+  let current = head;
 
-  while (head.next) {
-    let current = head.next;
-    if (seen[current]) {
+  while (current.next) {
+    current = current.next;
+    if (seen[current.data]) {
       return true;
-    } else if (!seen[current]) {
-      seen[current] = true;
+    } else if (!seen[current.data]) {
+      seen[current.data] = true;
     } else if (current === null) {
       return false;
     }
@@ -23,4 +35,9 @@ function circularList(head) {
   return false;
 }
 
-console.log(circularList('x'));
+let node1
+let node3 = new Node('third', node1)
+let node2 = new Node('second', node3)
+node1 = new Node('first', node2)
+let list = new LinkedList(node1);
+console.log(circularList(node1));
