@@ -34,7 +34,11 @@ function combinationSum(arr, target) {
     }
   }
 
-  return solution;
+  return solution.filter(distinct);
+}
+
+function distinct(value, index, self) {
+  return self.indexOf(value) === index;
 }
 
 function checkSum(sum, currentCombo, solution, target) {
