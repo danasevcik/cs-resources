@@ -20,23 +20,22 @@ class LinkedList {
 
 function circularList(head) {
   let current = head;
-  let seen = {}
-  let data = current.data
+  let seen = {};
 
   while (current.next) {
-    if (seen[data]) {
+    console.log(seen[current]);
+    console.log(seen);
+    if (seen[current]) {
       return true;
-    } else if (!seen[data]) {
-      seen[data] = true;
+    } else if (!seen[current]) {
+      seen[current] = true;
     }
     current = current.next;
-    data = current.data
   }
-  console.log(seen);
   return false;
 }
 
-
+// let node1
 let node3 = new Node('third')
 let node2 = new Node('second', node3)
 let node1 = new Node('first', node2)
