@@ -19,25 +19,26 @@ class LinkedList {
 }
 
 function circularList(head) {
-  let seen = {head:true};
   let current = head;
+  let seen = {}
+  let data = current.data
 
   while (current.next) {
-    current = current.next;
-    if (seen[current.data]) {
+    if (seen[data]) {
       return true;
-    } else if (!seen[current.data]) {
-      seen[current.data] = true;
-    } else if (current === null) {
-      return false;
+    } else if (!seen[data]) {
+      seen[data] = true;
     }
+    current = current.next;
+    data = current.data
   }
+  console.log(seen);
   return false;
 }
 
-let node1
-let node3 = new Node('third', node1)
+
+let node3 = new Node('third')
 let node2 = new Node('second', node3)
-node1 = new Node('first', node2)
+let node1 = new Node('first', node2)
 let list = new LinkedList(node1);
 console.log(circularList(node1));
