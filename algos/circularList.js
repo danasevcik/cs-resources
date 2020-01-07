@@ -41,3 +41,5 @@ let node2 = new Node('second', node3)
 let node1 = new Node('first', node2)
 let list = new LinkedList(node1);
 console.log(circularList(node1));
+
+// part 2 - change to linear space
