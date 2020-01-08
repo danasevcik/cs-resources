@@ -12,4 +12,10 @@ function searchInsertPosition(arr, num) {
       return i;
     }
   }
+  return 'num not found'
 }
+
+console.log(searchInsertPosition([1,2,3,4,5,6,7,8,9], 1)); // 0
+console.log(searchInsertPosition([1,2,3,4,5,6,7,8,9], 9)); // 8
+console.log(searchInsertPosition([1,2,3,4,5,6,7,8,9], 2)); // 1
+console.log(searchInsertPosition([1,2,3,4,5,6,7,8,9], 10)); // num not found
