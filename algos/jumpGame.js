@@ -13,3 +13,25 @@
 // incrememnt i by this much
 // if i is greater than or equal to the length of the arr - return true
 // if i is less than length of the arr - return false
+
+function jumpGame(arr){
+  let i = 0;
+
+  while (i < arr.length) {
+    i += arr[i];
+
+    if (arr[i] === 0 && i < arr.length) {
+      return false;
+    }
+  }
+
+  if (i >= arr.length) {
+    return true;
+  }
+
+  return false;
+}
+
+console.log(jumpGame([1,2,0,1,3])); // true
+console.log(jumpGame([0,1,2,3,4,5])); // false
+console.log(jumpGame([1,0,1,2,3,4,5])); // false
