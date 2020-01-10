@@ -34,5 +34,33 @@ function searchMatrixEfficiently(matrix, target) {
   let currentRow = 0;
   let currentColumn = columns - 1;
 
+  if (target < matrix[0][0] || target > matrix[rows - 1][columns - 1]) {
+    return false;
+  }
+
+  while (currentRow <= (rows - 1) && currentColumn >= 0) {
+    console.log(matrix[currentRow][currentColumn]);
+    if (matrix[currentRow][currentColumn] < target) {
+      currentRow++;
+    } else if (matrix[currentRow][currentColumn] > target) {
+      currentColumn--;
+    } else {
+      console.log(matrix[currentRow][currentColumn]);
+      return true;
+    }
+  }
+
+  return false;
 
 }
+
+let arr = [
+    [1, 2, 3, 4, 5],
+    [6, 7, 8, 9, 10],
+    [11, 12, 13, 14, 15],
+    [16, 17, 18, 19, 20],
+    [21, 22, 23, 24, 25]
+];
+console.log(searchMatrixEfficiently(arr, 3)); // true
+console.log(searchMatrixEfficiently(arr, 18)); // true
+console.log(searchMatrixEfficiently(arr, 500)); // false
