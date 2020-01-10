@@ -3,6 +3,15 @@
 // input: [1,2,3,4]
 // output: [24,12,8,6]
 
-// map through arr
-// create product variable where you store the product
-// iterate again and multiply all where i does not equal j
+// create output arr
+// iterate to the right of i
+// push product into output and multiply by all the other nums
+// iterate to the left of i
+// push product into output and multiply by all the other nums
+// return output arr
+
+function productArr(arr) {
+
+}
+
+console.log(productArr([1,2,3,4])); // [24,12,8,6]
