@@ -23,6 +23,16 @@ function searchMatrix(matrix, target) {
 console.log(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 3)); // true
 console.log(searchMatrix([[1, 3, 5, 7], [10, 11, 16, 20], [23, 30, 34, 50]], 500)); // false
 
+// first check if the target is out of bounds
 // start at top right of matrix
 // if the number is higher, move onto next row and eliminatee row 0
 // if number is lower, check current row for ele
+
+function searchMatrixEfficiently(matrix, target) {
+  let rows = matrix.length;
+  let columns = matrix[0].length;
+  let currentRow = 0;
+  let currentColumn = columns - 1;
+
+
+}
