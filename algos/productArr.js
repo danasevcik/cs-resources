@@ -11,6 +11,21 @@
 // return output arr
 
 function productArr(arr) {
+  let output = [...arr];
+  let leftProduct = 1;
+  let rightProduct = 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    output[i] = rightProduct;
+    rightProduct *= arr[i];
+  }
+
+  for (j = arr.length - 1; j >= 0; j--) {
+    output[j] *= leftProduct;
+    leftProduct *= arr[j];
+  }
+
+  return output;
 
 }
 
