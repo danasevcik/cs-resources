@@ -15,14 +15,15 @@ function productArr(arr) {
   let leftProduct = 1;
   let rightProduct = 1;
 
+
   for (let i = 0; i < arr.length; i++) {
-    output[i] = rightProduct;
-    rightProduct *= arr[i];
+    output[i] = leftProduct;
+    leftProduct *= arr[i];
   }
 
   for (j = arr.length - 1; j >= 0; j--) {
-    output[j] *= leftProduct;
-    leftProduct *= arr[j];
+    output[j] *= rightProduct;
+    rightProduct *= arr[j];
   }
 
   return output;
