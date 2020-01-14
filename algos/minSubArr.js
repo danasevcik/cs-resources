@@ -18,7 +18,6 @@ function minSubArr(arr, target) {
   // increment current length
   for (let i = 0; i < arr.length; i++) {
     let current = arr[i];
-    console.log(current);
     sum += current;
     currentLength++;
 
@@ -29,8 +28,6 @@ function minSubArr(arr, target) {
       j = i + 1
       sum += arr[j]
       currentLength++;
-      console.log('sum', sum);
-      console.log('currentLength', currentLength);
       // when the target is reached and the length is lower, replace lowest length
       if (sum >= target) {
         if (!lowestLength || currentLength < lowestLength) {
