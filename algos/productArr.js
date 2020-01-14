@@ -11,16 +11,20 @@
 // return output arr
 
 function productArr(arr) {
+  // copy arr
   let output = [...arr];
   let leftProduct = 1;
   let rightProduct = 1;
 
-
+  // iterate left of the number
+  // mult each number with the left product
   for (let i = 0; i < arr.length; i++) {
     output[i] = leftProduct;
     leftProduct *= arr[i];
   }
 
+  // iterate right of the number
+  // mult each number with the right product
   for (j = arr.length - 1; j >= 0; j--) {
     output[j] *= rightProduct;
     rightProduct *= arr[j];
