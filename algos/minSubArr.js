@@ -1,6 +1,7 @@
 // given an arr and target value
-// find the minimum length of contiguous subarr that sums to target
+// find the minimum length of contiguous subarr that sums to target or greater
 // return that length
+// minSubArr([2,3,1,2,4,3], 7); // 2 => [3,4]
 
 // create sum var and length var
 // iterate over arr

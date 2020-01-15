@@ -25,12 +25,19 @@ function productArr(arr) {
 
   // iterate right of the number
   // mult each number with the right product
-  for (j = arr.length - 1; j >= 0; j--) {
+  for (let j = arr.length - 1; j >= 0; j--) {
     output[j] *= rightProduct;
     rightProduct *= arr[j];
   }
 
   return output;
+
+}
+
+// multiply all of the numbers
+// for each specific index, divide by that ele
+// and push that dividend into the solution arr
+function secondProductArrSolution(arr) {
 
 }
 
