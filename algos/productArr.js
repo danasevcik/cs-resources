@@ -38,7 +38,19 @@ function productArr(arr) {
 // for each specific index, divide by that ele
 // and push that dividend into the solution arr
 function secondProductArrSolution(arr) {
+  let product = 1;
+  let output = [...arr];
 
+  for (let i = 0; i < arr.length; i++) {
+    product *= arr[i];
+  }
+
+  for (let i = 0; i < output.length; i++) {
+    output[i] = product / arr[i]
+  }
+
+  return output;
 }
 
 console.log(productArr([1,2,3,4])); // [24,12,8,6]
+console.log(secondProductArrSolution([1,2,3,4])); // [24,12,8,6]
