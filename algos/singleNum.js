@@ -7,3 +7,19 @@
 // add each number to the obj and keep track of the count
 // after the initial loop, look through the count obj
 // only add numbers to the output arr if the count is 1
+
+function singleNum(arr) {
+  let count = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    if (count[arr[i]]) {
+      count[arr[i]] ++
+    } else {
+      count[arr[i]] = 1;
+    }
+  }
+
+  console.log(count);
+}
+
+console.log(singleNum([1,2,1,3,2,5]));
