@@ -3,6 +3,11 @@
 
 // [3,0,1] => 2
 
+// sort the given arr
+// loop through the sorted arr
+// find the point at which the next num is NOT the previous num + 1
+// return that num
+
 function missingNum(arr) {
   let sortedArr = arr.sort();
 
