@@ -9,14 +9,19 @@
 // return that num
 
 function missingNum(arr) {
+  // sort the arr ascending
   let sortedArr = arr.sort();
 
   let i = 0;
 
+  // while there is an element exactly one greater
+  // continue iterating
   while (arr[i+1] === arr[i] + 1) {
     i++;
   }
 
+  // when the loop exits, we have found the missing ele
+  // return that element
   return arr[i] + 1;
 }
 
