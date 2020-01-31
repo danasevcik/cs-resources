@@ -9,3 +9,9 @@
 // have a lit key - toggle this boolean
 // [{1: bulb, lit: false}, {2: bulb, lit: false}, {3: bulb, lit: false}]
 // continue iterating and toggle by x
+
+function bulbSwitch() {
+    console.log('test')
+}
+
+console.log(bulbSwitch())
