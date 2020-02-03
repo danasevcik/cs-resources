@@ -11,7 +11,7 @@
 // continue iterating and toggle by x
 
 function bulbSwitch() {
-    
+    console.log('test')
 }
 
 console.log(bulbSwitch())
