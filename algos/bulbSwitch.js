@@ -10,8 +10,32 @@
 // [{1: bulb, lit: false}, {2: bulb, lit: false}, {3: bulb, lit: false}]
 // continue iterating and toggle by x
 
-function bulbSwitch() {
-    console.log('test')
+function bulbSwitch(n) {
+    let i = 0;
+    let bools = [];
+
+    for (let i = 0; i < n; i++) {
+        bools.push(false);
+    }
+
+    console.log(bools);
+    
+    while (i <= n) {
+        console.log('i', i)
+        console.log('n', n)
+        bools[i] = !bools[i]
+        console.log(bools);
+        
+        i++;
+    }
+
+
+
 }
 
-console.log(bulbSwitch())
+console.log(bulbSwitch(3)) // 1
+// 3 bulbs off
+// 1st pass - 3 bulbs [on, on, on]
+// 2nd pass - [on, off, on]
+// 3rd pass - [on, off, off]
+// 1 on 
