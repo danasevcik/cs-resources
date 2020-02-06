@@ -11,23 +11,25 @@
 // continue iterating and toggle by x
 
 function bulbSwitch(n) {
-    let i = 0;
+    let i = 1;
     let bools = [];
 
     for (let i = 0; i < n; i++) {
-        bools.push(false);
+        bools.push(true);
     }
 
     console.log(bools);
-    
-    while (i <= n) {
+
+    while (i < n) {
         console.log('i', i)
         console.log('n', n)
         bools[i] = !bools[i]
         console.log(bools);
-        
+
         i++;
     }
+
+     
 
 
 
@@ -38,4 +40,4 @@ console.log(bulbSwitch(3)) // 1
 // 1st pass - 3 bulbs [on, on, on]
 // 2nd pass - [on, off, on]
 // 3rd pass - [on, off, off]
-// 1 on 
+// 1 on
